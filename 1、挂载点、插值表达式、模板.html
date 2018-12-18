@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>挂载点、插值表达式、模板</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <!-- 挂载点 -->
+    <div id="root">
+        <!-- 插值表达式 -->
+        {{ msg }}
+    </div>
+
+    <script>
+        new Vue({
+            el: "#root",
+            // template: '<h3>Welcome</h3>',
+            // template 和挂载点的内容只能二选一，优先template
+            data: {
+                msg: "Hello World"
+            }
+        })
+
+        
+    </script>
+    
+</body>
+</html>

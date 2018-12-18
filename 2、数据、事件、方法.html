@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>数据、事件、方法</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <!-- 挂载点 -->
+    <div id="root">
+        <!-- 纯文本 -->
+        <div v-text="content"></div>    
+        <!-- 会渲染 -->
+        <div v-html="content"></div>
+        <!-- v-on: 可以简写成@，即 @click="handleClick" -->
+        <div v-on:click="handleClick">{{ clickme }}</div>
+    </div>
+
+    <script>
+        new Vue({
+            el: "#root",
+            // 数据定义在 data 属性里
+            data: {
+                msg: "Hello World",
+                content: "<h1>Ezreal</h1>",
+                clickme: "Click me"
+            },
+            // 方法定义在 methods 属性里
+            methods: {
+                handleClick: function(){
+                    this.clickme = "Hello Ezreal!"
+                }
+
+            }
+        })
+
+        
+    </script>
+    
+</body>
+</html>

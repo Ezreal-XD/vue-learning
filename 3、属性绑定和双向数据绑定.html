@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>属性绑定和双向数据绑定</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <!-- 挂载点 -->
+    <div id="root">
+        <!-- 属性绑定，v-bind：可简写为： -->
+        <div v-bind:title="title">I am here</div>
+        <!-- 数据的双向绑定 -->
+        <input v-model="content">
+        <div>{{ content }}</div>
+    </div>
+
+    <script>
+        new Vue({
+            el: "#root",
+            // 数据定义在 data 属性里
+            data: {
+                title: "Hello World",
+                content: "Input something here"
+            },
+            // 方法定义在 methods 属性里
+            methods: {
+                handleClick: function(){
+                    this.clickme = "Hello Ezreal!"
+                }
+
+            }
+        })
+
+        
+    </script>
+    
+</body>
+</html>
